@@ -10,12 +10,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2023_05_05_025942) do
+ActiveRecord::Schema.define(version: 2023_05_07_131626) do
 
   create_table "products", force: :cascade do |t|
     t.string "name"
     t.text "tegs"
     t.text "data_product"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "products_groups", force: :cascade do |t|
+    t.string "name"
+    t.string "number_group"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

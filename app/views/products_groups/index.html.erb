@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Products Groups</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Number group</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @products_groups.each do |products_group| %>
+      <tr>
+        <td><%= products_group.name %></td>
+        <td><%= products_group.number_group %></td>
+        <td><%= link_to 'Show', products_group %></td>
+        <td><%= link_to 'Edit', edit_products_group_path(products_group) %></td>
+        <td><%= link_to 'Destroy', products_group, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Products Group', new_products_group_path %>
